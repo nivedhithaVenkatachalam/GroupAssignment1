@@ -12,7 +12,7 @@ var express = require('express')
   , path = require('path');
 var mongoose = require('mongoose');
 //Connect to MongoDB
-mongoose.connect('mongodb://280:280@ds061641.mongolab.com:61641/assignment2');
+mongoose.connect('mongodb:link from mongolab');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
@@ -64,7 +64,7 @@ app.use(express['static'](__dirname + '/../public'));
 
 //get
 app.get('/', function(req, res){
-  fs.readFile(__dirname + '/public/index.html', 'utf8', function(err, text){
+  fs.readFile(__dirname + '/public/coc.html', 'utf8', function(err, text){
         res.send(text);
     });
 });
